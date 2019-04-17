@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ZDX
+Comment=ZDX P2P Cryptocurrency
+Comment[fr]=ZDX, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=ZDX, eşten eşe kriptografik sanal para birimi
+Exec=zdx-qt %u
+Terminal=false
+Type=Application
+Icon=zdx128
+MimeType=x-scheme-handler/zdx;
+Categories=Office;Finance;

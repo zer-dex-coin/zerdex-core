@@ -1,0 +1,26 @@
+# /etc/conf.d/zdxd: config file for /etc/init.d/zdxd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/zdx/zdx.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/zdxd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/zdxd.pid"
+
+# Where to write zdxd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/zdxd"
+
+# User and group to own zdxd process
+#BITCOIND_USER="zdx"
+#BITCOIND_GROUP="zdx"
+
+# Path to zdxd executable
+#BITCOIND_BIN="/usr/bin/zdxd"
+
+# Nice value to run zdxd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

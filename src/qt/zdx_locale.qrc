@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/zdx_bg.qm</file>
+        <file alias="ca">locale/zdx_ca.qm</file>
+        <file alias="cs">locale/zdx_cs.qm</file>
+        <file alias="da">locale/zdx_da.qm</file>
+        <file alias="de">locale/zdx_de.qm</file>
+        <file alias="en">locale/zdx_en.qm</file>
+        <file alias="en_US">locale/zdx_en_US.qm</file>
+        <file alias="es">locale/zdx_es.qm</file>
+        <file alias="fi">locale/zdx_fi.qm</file>
+        <file alias="fr_FR">locale/zdx_fr_FR.qm</file>
+        <file alias="hr">locale/zdx_hr.qm</file>
+        <file alias="it">locale/zdx_it.qm</file>
+        <file alias="ja">locale/zdx_ja.qm</file>
+        <file alias="ko_KR">locale/zdx_ko_KR.qm</file>
+        <file alias="nl">locale/zdx_nl.qm</file>
+        <file alias="pl">locale/zdx_pl.qm</file>
+        <file alias="pt">locale/zdx_pt.qm</file>
+        <file alias="pt_BR">locale/zdx_pt_BR.qm</file>
+        <file alias="ro_RO">locale/zdx_ro_RO.qm</file>
+        <file alias="ru">locale/zdx_ru.qm</file>
+        <file alias="sk">locale/zdx_sk.qm</file>
+        <file alias="sv">locale/zdx_sv.qm</file>
+        <file alias="tr">locale/zdx_tr.qm</file>
+        <file alias="uk">locale/zdx_uk.qm</file>
+        <file alias="zh_CN">locale/zdx_zh_CN.qm</file>
+        <file alias="zh_TW">locale/zdx_zh_TW.qm</file>
+    </qresource>
+</RCC>
