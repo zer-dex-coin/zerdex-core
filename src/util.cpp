@@ -430,7 +430,7 @@ boost::filesystem::path GetDefaultDataDir()
 // Unix: ~/.zdx
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "ZDX Core";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "ZDXCore";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -442,10 +442,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "zdx";
+    return pathRet / "ZDXCore";
 #else
     // Unix
-    return pathRet / ".zdx";
+    return pathRet / ".ZDXCore";
 #endif
 #endif
 }
