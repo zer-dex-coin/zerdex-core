@@ -218,12 +218,7 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
+
          <property name="text">
           <string>Dust:</string>
          </property>
@@ -298,12 +293,7 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
+
          <property name="text">
           <string>Change:</string>
          </property>
