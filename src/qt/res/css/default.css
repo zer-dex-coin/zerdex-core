@@ -156,7 +156,7 @@ color:#fff;
 }
 
 .QRadioButton { /* Radio Button Labels */
-color:#fff;
+color:#000000;
 }
 
 .QCheckBox { /* Checkbox Labels */
@@ -1690,6 +1690,7 @@ QDialog#CoinControlDialog .QFrame#frame .QRadioButton#radioListMode { /* Coin Co
 color:#818181;
 background-color:transparent;
 }
+
 
 QDialog#CoinControlDialog QHeaderView::section:first { /* Bug Fix: the number "1" displays in this table for some reason... */
 color:transparent;
