@@ -156,6 +156,10 @@ color:#fff;
 }
 
 .QRadioButton { /* Radio Button Labels */
+color:#fff;
+}
+
+QRadioButton::indicator:checked {
 color:#000000;
 }
 
