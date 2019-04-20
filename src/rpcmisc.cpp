@@ -607,7 +607,7 @@ Value getstakingstatus(const Array& params, bool fHelp)
 	else {
 		nExpectedTimeHours = nPosKernelPS / nWeight * Params().TargetSpacing() / 3600;
 		weight.push_back(Pair("Weight", nWeight/COIN));
-		weight.push_back(Pair("Network weight", nPosKernelPS));
+		weight.push_back(Pair("Network weight", nPosKernelPS/COIN));
 		weight.push_back(Pair("expected time in hours", nExpectedTimeHours));
 	}
     
