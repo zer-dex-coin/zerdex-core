@@ -549,7 +549,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             
             int64_t nPos;
             if(chainActive.Tip()->nHeight >= 50000)
-				nPos = 150 * COIN;
+				nPos = 100 * COIN;
 			else
 				nPos = 100 * COIN;
 				
@@ -565,7 +565,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                     continue;
             }
             
-			if(fProofOfStake && pwallet->GetBalance() < 1000 * COIN) {
+			if(fProofOfStake && pwallet->GetBalance() < nPos) {
 				//LogPrintf("PoS and Balance is too low %d\n", pwallet->GetBalance());
 				MilliSleep(60000);
 				continue;
