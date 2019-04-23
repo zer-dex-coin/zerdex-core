@@ -58,7 +58,6 @@ Value getinfo(const Array& params, bool fHelp)
             "  \"protocolversion\": xxxxx,   (numeric) the protocol version\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
             "  \"balance\": xxxxxxx,         (numeric) the total zdx balance of the wallet (excluding zerocoins)\n"
-            "  \"zerocoinbalance\": xxxxxxx, (numeric) the total zerocoin balance of the wallet\n"
             "  \"blocks\": xxxxxx,           (numeric) the current number of blocks processed in the server\n"
             "  \"timeoffset\": xxxxx,        (numeric) the time offset\n"
             "  \"connections\": xxxxx,       (numeric) the number of connections\n"
@@ -66,18 +65,6 @@ Value getinfo(const Array& params, bool fHelp)
             "  \"difficulty\": xxxxxx,       (numeric) the current difficulty\n"
             "  \"testnet\": true|false,      (boolean) if the server is using testnet or not\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zZDXsupply\" :\n"
-            "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zZDX denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zZDX denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zZDX denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zZDX denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zZDX denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zZDX denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zZDX denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zZDX denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zZDX denominations\n"
-            "  }\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
@@ -99,7 +86,7 @@ Value getinfo(const Array& params, bool fHelp)
     if (pwalletMain) {
         obj.push_back(Pair("walletversion", pwalletMain->GetVersion()));
         obj.push_back(Pair("balance", ValueFromAmount(pwalletMain->GetBalance())));
-        obj.push_back(Pair("zerocoinbalance", ValueFromAmount(pwalletMain->GetZerocoinBalance(true))));
+
     }
 #endif
     obj.push_back(Pair("blocks", (int)chainActive.Height()));
@@ -114,7 +101,7 @@ Value getinfo(const Array& params, bool fHelp)
         zzdxObj.push_back(Pair(to_string(denom), ValueFromAmount(chainActive.Tip()->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
     zzdxObj.emplace_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
-    obj.emplace_back(Pair("zZDXsupply", zzdxObj));
+
     
 #ifdef ENABLE_WALLET
     if (pwalletMain) {
@@ -608,7 +595,7 @@ Value getstakingstatus(const Array& params, bool fHelp)
 		nExpectedTimeHours = nPosKernelPS / nWeight * Params().TargetSpacing() / 3600;
 		weight.push_back(Pair("Weight", nWeight/COIN));
 		weight.push_back(Pair("Network weight", nPosKernelPS/COIN));
-		weight.push_back(Pair("expected time in hours", nExpectedTimeHours));
+		weight.push_back(Pair("expected time in minutes", nExpectedTimeHours*60));
 	}
     
     obj.push_back(Pair("stakeweight", weight));

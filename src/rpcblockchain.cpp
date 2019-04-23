@@ -96,7 +96,7 @@ Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool txDe
         zzdxObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
     zzdxObj.emplace_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.emplace_back(Pair("zZDXsupply", zzdxObj));
+
 
     return result;
 }
@@ -279,19 +279,6 @@ Value getblock(const Array& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zZDXsupply\" :\n"
-            "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zZDX denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zZDX denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zZDX denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zZDX denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zZDX denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zZDX denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zZDX denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zZDX denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zZDX denominations\n"
-            "  }\n"
-            "}\n"
             "\nResult (for verbose=false):\n"
             "\"data\"             (string) A string that is serialized, hex-encoded data for block 'hash'.\n"
             "\nExamples:\n" +
