@@ -331,14 +331,7 @@ CNodeState* State(NodeId pnode)
 
 int GetHeight()
 {
-    while (true) {
-        TRY_LOCK(cs_main, lockMain);
-        if (!lockMain) {
-            MilliSleep(50);
-            continue;
-        }
         return chainActive.Height();
-    }
 }
 
 void UpdatePreferredDownload(CNode* node, CNodeState* state)
