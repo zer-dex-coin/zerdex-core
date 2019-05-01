@@ -54,9 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0000e6c49269998a4b5221c0282ce10bb84e768215e480d755cbf3395f6c81a9"))
-	(1, uint256("000027e72708567811861a766cfc0a8eb3d3aef2eb5b821bae255141c9979737"))
-	(5920, uint256("d70e0b8b36e2a084b47ad6010237bb39e3ef74a9db5891532c6d4fd7078ee2bd"));
+    boost::assign::map_list_of(0, uint256("0000e6c49269998a4b5221c0282ce10bb84e768215e480d755cbf3395f6c81a9"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1528633260, // * UNIX timestamp of last checkpoint block
@@ -109,7 +107,7 @@ public:
         pchMessageStart[3] = 0xFA;
         vAlertPubKey = ParseHex("0409ddbda2be0200302b66d5b0d15f6997721c49b0ee1aece98d24a9cb08c6424e07fb3abf1c74a01f6e1857a6b9a1a91a501c3bd76d50b3d907e99eafadc85e39");
         nDefaultPort = MASTERNODE_PORT;
-        bnProofOfWorkLimit = ~uint256(0) >> 18; 
+        bnProofOfWorkLimit = ~uint256(0) >> 17; 
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
@@ -125,10 +123,10 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 3600; 
 
-        nModifierUpdateBlock = 999999999;
-        nZerocoinStartHeight = 99999999;
+        nModifierUpdateBlock = 100;
+        nZerocoinStartHeight = 200;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1727811200; // Friday, June 1, 2018 12:00:00 AM - GMT
+        nZerocoinStartTime = 1527811200; // Friday, June 1, 2018 12:00:00 AM - GMT
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -159,8 +157,6 @@ public:
         assert(genesis.hashMerkleRoot == uint256("b855ce9b0df7baeb3b885e005014038acab293a9342191c3eafb0268051b621a"));
 
 		
-        vSeeds.push_back(CDNSSeedData("seed1", "80.211.198.60"));
-        vSeeds.push_back(CDNSSeedData("seed2", "35.206.136.72"));
         vSeeds.push_back(CDNSSeedData("seed3", "seed1.goldycoin.pl"));
         vSeeds.push_back(CDNSSeedData("seed4", "seed2.goldycoin.pl"));
         vSeeds.push_back(CDNSSeedData("seed5", "mainnet.zdxplorer.info"));
