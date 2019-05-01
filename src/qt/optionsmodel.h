@@ -92,7 +92,7 @@ signals:
     void displayUnitChanged(int unit);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);
-    void anonymizeZdxAmountChanged(int);
+    void anonymizeZDXAmountChanged(int);
     void coinControlFeaturesChanged(bool);
 };
 

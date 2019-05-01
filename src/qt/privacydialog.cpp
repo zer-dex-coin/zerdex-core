@@ -281,7 +281,7 @@ void PrivacyDialog::on_pushButtonSpendzZDX_clicked()
     sendzZDX();
 }
 
-void PrivacyDialog::on_pushButtonZZdxControl_clicked()
+void PrivacyDialog::on_pushButtonZZDXControl_clicked()
 {
     ZZdxControlDialog* zZdxControl = new ZZdxControlDialog(this);
     zZdxControl->setModel(walletModel);

@@ -100,7 +100,7 @@ private slots:
     void on_pushButtonMintReset_clicked();
     void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzZDX_clicked();
-    void on_pushButtonZZdxControl_clicked();
+    void on_pushButtonZZDXControl_clicked();
     void on_pasteButton_clicked();
     void updateDisplayUnit();
 };

@@ -353,7 +353,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
         case AnonymizeZdxAmount:
             nAnonymizeZdxAmount = value.toInt();
             settings.setValue("nAnonymizeZdxAmount", nAnonymizeZdxAmount);
-            emit anonymizeZdxAmountChanged(nAnonymizeZdxAmount);
+            emit anonymizeZDXAmountChanged(nAnonymizeZdxAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();
