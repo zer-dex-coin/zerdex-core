@@ -54,7 +54,9 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0000e6c49269998a4b5221c0282ce10bb84e768215e480d755cbf3395f6c81a9"));
+    boost::assign::map_list_of
+	(0, uint256("0000f39e3ff6f5a891b9b41e2d2cb73eaac0973b6207099cb6d4e7507a84ec2e"))
+	(800, uint256("00000568e9067bf5690ea496d8d6bdb41e704a59263b44f2cddc201b072d2f88"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1528633260, // * UNIX timestamp of last checkpoint block
@@ -107,7 +109,7 @@ public:
         pchMessageStart[3] = 0xFA;
         vAlertPubKey = ParseHex("0409ddbda2be0200302b66d5b0d15f6997721c49b0ee1aece98d24a9cb08c6424e07fb3abf1c74a01f6e1857a6b9a1a91a501c3bd76d50b3d907e99eafadc85e39");
         nDefaultPort = MASTERNODE_PORT;
-        bnProofOfWorkLimit = ~uint256(0) >> 17; 
+        bnProofOfWorkLimit = ~uint256(0) >> 16; 
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
@@ -123,7 +125,7 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 3600; 
 
-        nModifierUpdateBlock = 100;
+        nModifierUpdateBlock = 300;
         nZerocoinStartHeight = 200;
         nAccumulatorStartHeight = 1;
         nZerocoinStartTime = 1527811200; // Friday, June 1, 2018 12:00:00 AM - GMT
@@ -133,7 +135,7 @@ public:
         nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
         
 
-        const char* pszTimestamp = "Cryptocurrencies, by contrast, have no backstop, no tether to reality. ";
+        const char* pszTimestamp = "ZerDex, by contrast, have no backstop, no tether to reality. ";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -146,21 +148,24 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1555315219;	  
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0x14cef;
+        genesis.nNonce = 0x17617;
         nStakeInputMinimal = 100 * COIN;
         
-        
+
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0000e6c49269998a4b5221c0282ce10bb84e768215e480d755cbf3395f6c81a9"));
-        assert(genesis.hashMerkleRoot == uint256("b855ce9b0df7baeb3b885e005014038acab293a9342191c3eafb0268051b621a"));
+
+
+
+        assert(hashGenesisBlock == uint256("0000f39e3ff6f5a891b9b41e2d2cb73eaac0973b6207099cb6d4e7507a84ec2e"));
+        assert(genesis.hashMerkleRoot == uint256("67455a365867b22f92e32d5bb3e93661dfc64e12b03061ba8de799d20c80b06c"));
 
 		
-        vSeeds.push_back(CDNSSeedData("seed3", "seed1.goldycoin.pl"));
-        vSeeds.push_back(CDNSSeedData("seed4", "seed2.goldycoin.pl"));
-        vSeeds.push_back(CDNSSeedData("seed5", "mainnet.zdxplorer.info"));
-        vSeeds.push_back(CDNSSeedData("seed6", "zdxplorer.info"));
+        vSeeds.push_back(CDNSSeedData("seed1", "seed1.goldycoin.pl"));
+        vSeeds.push_back(CDNSSeedData("seed2", "seed2.goldycoin.pl"));
+        vSeeds.push_back(CDNSSeedData("seed3", "mainnet.zdxplorer.info"));
+        vSeeds.push_back(CDNSSeedData("seed4", "zdxplorer.info"));
 
 
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
@@ -186,7 +191,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "048b0876e4ea872cbb14eaaafc0ed1ab7678567091045c537028d47dd1d3b01c20f6604ff1f8392cb8d3daf64fed18dd3cf02270514b95bc2de1bbeb5980ff55e4";
-        strObfuscationPoolDummyAddress = "ZocD4KLakVEgePdJEsF8EP1vAt3GhyP4tZ";
+        strObfuscationPoolDummyAddress = "ZvhCreyk7QHSXWGKtZq2jNCYtZ8u9mRyhC";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
@@ -248,11 +253,13 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1551726000;	   // Monday, March 4, 2019 7:00:00 PM
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0x6372;
+        genesis.nNonce = 0xd1e7;
+        
+
 
 	    hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("000081f3912d20359c81dfdfcffb8f00e35634acc9c8734a11f2a11e7beafa6b"));
-        assert(genesis.hashMerkleRoot == uint256("b855ce9b0df7baeb3b885e005014038acab293a9342191c3eafb0268051b621a"));
+        assert(hashGenesisBlock == uint256("0000b1760162b68a54b7105246fe5a22cb9cabe20542d9f0f241304614bd1862"));
+        assert(genesis.hashMerkleRoot == uint256("67455a365867b22f92e32d5bb3e93661dfc64e12b03061ba8de799d20c80b06c"));
 
 
         vFixedSeeds.clear();
