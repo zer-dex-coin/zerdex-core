@@ -144,12 +144,12 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     view->setTabKeyNavigation(false);
     view->setContextMenuPolicy(Qt::CustomContextMenu);
-	view->setStyleSheet("background-color: transparent; color: black; selection-background-color: white");
-    view->installEventFilter(this);
+    view->setStyleSheet("qlineargradient(x1: 0, y1: 0, x0: 2, y0: 1, stop: 0 rgba(29,29,29, 0.9), stop: 1  rgba(126,126,126, 0.2)); color: white; selection-background-color: white");    view->installEventFilter(this);
     view->setObjectName("TransactionViewTable");
 
     transactionView = view;
 
+    this->setStyleSheet("color: #ffffff; background-color: qlineargradient(x1: 0, y1: 0, x0: 2, y0: 1, stop: 0 rgba(29,29,29, 0.9), stop: 1  rgba(126,126,126, 0.2));");
 
     
 
@@ -213,7 +213,6 @@ void TransactionView::setModel(WalletModel* model)
         transactionView->setSortingEnabled(true);
         transactionView->sortByColumn(TransactionTableModel::Date, Qt::DescendingOrder);
         transactionView->verticalHeader()->hide();
-	transactionView->setStyleSheet("background-color: qlineargradient(x1: 0, y1: 0, x0: 2, y0: 1, stop: 0 rgba(29,29,29, 0.9), stop: 1  rgba(126,126,126, 0.2));");
         transactionView->setColumnWidth(TransactionTableModel::Status, STATUS_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Watchonly, WATCHONLY_COLUMN_WIDTH);
         transactionView->setColumnWidth(TransactionTableModel::Date, DATE_COLUMN_WIDTH);
