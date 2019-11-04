@@ -60,6 +60,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 	(46900, uint256("9f01b95318a00139b5d022353df05f6018e58349139d2d9dcb2d781e2500ce13"))
 	(89000, uint256("702f11739b330fe37612af4561f87d5b123a18b450800b7987201abdf160afa2"))
 	(211000, uint256("9d94b56e701e51d4e67efe31877d09c452e5c8fb6333eb7ebf91b697109b9948"))
+	(265000, uint256("17f431e85ef0ce2ccf4333ae6931b2778db36efb14dcf2850b65bb4080c01e1b"))
 	;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -124,7 +125,7 @@ public:
         nTargetSpacing = 60; 
         nMaturity = 70;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 89000000 * COIN; 
+        nMaxMoneyOut = 21000000 * COIN; 
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 3600; 
@@ -166,8 +167,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256("67455a365867b22f92e32d5bb3e93661dfc64e12b03061ba8de799d20c80b06c"));
 
 		
-        vSeeds.push_back(CDNSSeedData("seed1", "seed1.goldycoin.pl"));
-        vSeeds.push_back(CDNSSeedData("seed2", "seed2.goldycoin.pl"));
+        vSeeds.push_back(CDNSSeedData("seed1", "seed1.zdxplorer.info"));
+        vSeeds.push_back(CDNSSeedData("seed2", "seed2.zdxplorer.info"));
         vSeeds.push_back(CDNSSeedData("seed3", "mainnet.zdxplorer.info"));
         vSeeds.push_back(CDNSSeedData("seed4", "zdxplorer.info"));
 
