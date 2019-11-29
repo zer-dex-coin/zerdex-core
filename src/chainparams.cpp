@@ -61,6 +61,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 	(89000, uint256("702f11739b330fe37612af4561f87d5b123a18b450800b7987201abdf160afa2"))
 	(211000, uint256("9d94b56e701e51d4e67efe31877d09c452e5c8fb6333eb7ebf91b697109b9948"))
 	(265000, uint256("17f431e85ef0ce2ccf4333ae6931b2778db36efb14dcf2850b65bb4080c01e1b"))
+	(300500, uint256("4215d975a221aed6e9acea0d269c3774b80f8bb68103c54249650242aa10757a"))
 	;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -170,7 +171,6 @@ public:
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.zdxplorer.info"));
         vSeeds.push_back(CDNSSeedData("seed2", "seed2.zdxplorer.info"));
         vSeeds.push_back(CDNSSeedData("seed3", "mainnet.zdxplorer.info"));
-        vSeeds.push_back(CDNSSeedData("seed4", "zdxplorer.info"));
 
 
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
