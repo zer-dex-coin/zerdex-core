@@ -6356,12 +6356,17 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //       so we can leave the existing clients untouched (old SPORK will stay on so they don't see even older clients).
 //       Those old clients won't react to the changes of the other (new) SPORK because at the time of their implementation
 //       it was the one which was commented out
+
+#define FORK_HEIGHT 360000 //collateral change to 25k
+
 int ActiveProtocol()
 {
-	if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    int nHeight = chainActive.Height();
 
-     	    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+	if(nHeight >= FORK_HEIGHT)
+		return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+	else
+		return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
 
 // requires LOCK(cs_vRecvMsg)
