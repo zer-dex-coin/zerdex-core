@@ -330,10 +330,10 @@ bool CMasternode::IsValidNetAddr()
            (IsReachable(addr) && addr.IsRoutable());
 }
 
-#define COLLATERAL_HEIGHT_INCREASE	950000	//RELEASE
+#define COLLATERAL_HEIGHT_INCREASE	360000	//RELEASE
 
 #define MASTERNODE_COLLATERAL_LOW (10000 * COIN)
-#define MASTERNODE_COLLATERAL_HIGH (10000 * COIN)
+#define MASTERNODE_COLLATERAL_HIGH (25000 * COIN)
 
 CAmount CMasternodeBroadcast::GetMasternodeCollateralToActivate(int nHeight)
 {
